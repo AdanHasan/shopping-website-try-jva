@@ -24,8 +24,8 @@ public  class ItemRepositoryImpl implements ItemRepository {
 
     @Override
     public Long createItem(Item item) {
-        String sql = "INSERT INTO " + ITEM_TABLE_NAME + " (title, price, quantity, picture_url) VALUES (?, ? ,?, ?)";
-        jdbcTemplate.update(sql, item.getTitle() , item.getPrice() , item.getQuantity() , item.getPictureUrl());
+        String sql = "INSERT INTO " + ITEM_TABLE_NAME + " (title, price, quantity, picture_url , liked) VALUES (?, ? ,?, ?,?)";
+        jdbcTemplate.update(sql, item.getTitle() , item.getPrice() , item.getQuantity() , item.getPictureUrl(), item.getLiked());
         return jdbcTemplate.queryForObject("SELECT LAST_INSERT_ID();", Long.class);
     }
 
@@ -51,9 +51,9 @@ public  class ItemRepositoryImpl implements ItemRepository {
 
     @Override
     public void updateItem(Item item , Long itemId) {
-        String sql = "UPDATE " + ITEM_TABLE_NAME + " SET title=?, price=? ,  quantity=? ,   picture_url=? " +
+        String sql = "UPDATE " + ITEM_TABLE_NAME + " SET title=?, price=? ,  quantity=? ,   picture_url=? , liked=? " +
                 " WHERE id=?";
-        jdbcTemplate.update(sql, item.getTitle() , item.getPrice() , item.getQuantity() , item.getPictureUrl() , itemId);
+        jdbcTemplate.update(sql, item.getTitle() , item.getPrice() , item.getQuantity() , item.getPictureUrl() , item.getLiked(), itemId);
     }
 
     @Override

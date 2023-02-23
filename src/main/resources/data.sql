@@ -9,6 +9,7 @@ CREATE TABLE item (
     price DOUBLE  NOT NULL ,
     quantity int(11) NOT NULL ,
    picture_url varchar(max) NOT NULL,
+   liked BIT(1) NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -41,16 +42,16 @@ CREATE TABLE orders (
 
 
 
-INSERT INTO item (title , price , quantity , picture_url  ) VALUES
-('Oversized Check Detail Geometric Frame Sunglasses',235.59 , 10 ,'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-photos&psig=AOvVaw1oCRg9M7Y_97m4FmdECFBu&ust=1676539830048000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCJi679mbl_0CFQAAAAAdAAAAABAE'),
-('Monogram Motif Oversized Round Frame Lola Sunglasses',321.92 , 10 , 'http.slkkfkl' ),
-('Cat-eye Frame Sunglasses',261.93, 10 , 'http.slkkfkl' ),
-('Monogram Motif Oversized Square Frame Lola Sunglasses',288.27 , 10 , 'http.slkkfkl' ),
-('Logo Detail Cat-eye Frame Sunglasses',321.92, 10 , 'http.slkkfkl' ),
-('Check Square Frame Sunglasses',261.93, 10 , 'http.slkkfkl' ),
-('B Motif Square Frame Sunglasses',351.19, 10 , 'http.slkkfkl' ),
-('Vintage Check Detail Pilot Sunglasses',261.93, 10 , 'http.slkkfkl' ),
-('Logo Lens D-frame Sunglasses',261.93, 10 , 'http.slkkfkl' ),
-('B Lens Detail Rectangular Frame Sunglasses',321.92, 10 , 'http.slkkfkl' ),
-('Vintage Check Detail Butterfly Frame Sunglasses',235.59, 10 , 'http.slkkfkl' ),
-('B Motif Rectangular Frame Sunglasses',351.19, 10 , 'http.slkkfkl' );
+INSERT INTO item (title , price , quantity , picture_url , liked  ) VALUES
+('Oversized Check Detail Geometric Frame Sunglasses',235.59 , 10 ,'sun1.webp' , 0),
+('Monogram Motif Oversized Round Frame Lola Sunglasses',321.92 , 10 , 'http.slkkfkl' ,0 ),
+('Cat-eye Frame Sunglasses',261.93, 10 , 'http.slkkfkl' , 0),
+('Monogram Motif Oversized Square Frame Lola Sunglasses',288.27 , 10 , 'http.slkkfkl',0),
+('Logo Detail Cat-eye Frame Sunglasses',321.92, 10 , 'http.slkkfkl', 0 ),
+('Check Square Frame Sunglasses',261.93, 10 , 'http.slkkfkl', 0 ),
+('B Motif Square Frame Sunglasses',351.19, 10 , 'http.slkkfkl' , 0),
+('Vintage Check Detail Pilot Sunglasses',261.93, 10 , 'http.slkkfkl', 0 ),
+('Logo Lens D-frame Sunglasses',261.93, 10 , 'http.slkkfkl', 0 ),
+('B Lens Detail Rectangular Frame Sunglasses',321.92, 10 , 'http.slkkfkl', 0 ),
+('Vintage Check Detail Butterfly Frame Sunglasses',235.59, 10 , 'http.slkkfkl',0 ),
+('B Motif Rectangular Frame Sunglasses',351.19, 10 , 'http.slkkfkl', 0 );

@@ -12,13 +12,16 @@ public class Item {
 
     private String pictureUrl;
 
+    private Boolean liked ;
 
-    public Item(Long id , String title ,Double price , Long quantity,String pictureUrl) {
+
+    public Item(Long id , String title ,Double price , Long quantity,String pictureUrl , Boolean liked) {
         this.id = id;
         this.title = title;
         this.price = price;
         this.quantity = quantity;
         this.pictureUrl = pictureUrl;
+        this.liked=liked;
 
     }
 
@@ -42,6 +45,11 @@ public class Item {
         return pictureUrl;
     }
 
+
+    public Boolean getLiked() {
+        return liked;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -60,5 +68,9 @@ public class Item {
 
     public void setPictureUrl(String pictureUrl) {
         this.pictureUrl = pictureUrl;
+    }
+
+    public void setLiked(Boolean liked) {
+        this.liked = liked;
     }
 }
